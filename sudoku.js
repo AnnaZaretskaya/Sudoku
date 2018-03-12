@@ -1,79 +1,8 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Sudoku</title>
-	<link rel="stylesheet" href="style.css" >
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>
-	
-</head>
-  <body>
-<div class="popup">
-	<a class="close" >X</a>
-	<form method="post" action="">
-		<button type="button" value="1">1</button>
-		<button type="button" value="2">2</button>
-		<button type="button" value="3">3</button><br>
-		<button type="button" value="4">4</button>
-		<button type="button" value="5">5</button>
-		<button type="button" value="6">6</button><br>
-		<button type="button" value="7">7</button>
-		<button type="button" value="8">8</button>
-		<button type="button" value="9">9</button><br>
-		<button type="button" value='null'>-</button>
-	</form>
-		</div>
-    <div class="header">
-	<div class="center">
-		<div class="top">
-			<div class="link"><a href="#" title="Hire me!">Анна Зарецкая</a></div>
-			<div class="btn"><button id="refresh">Новая игра
-							</button></div>
-			<div class="btn" title="Показывает Ваши ошибки"><button id="showTip" >Подсказка
-							</button></div>
-			<div class="btn"><button id="showAnswer">Показать ответ	
-							</button></div>
-			
-		</div>
-	</div>
-	</div>
-	<div class="main" id="container">
-			<table class="table" id="table">
-				<tr> 
-					<td></td><td></td><td></td><td class="vline"></td><td></td><td></td><td class="vline"></td><td></td><td></td>
-				</tr> 
-				<tr> 
-					<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-				</tr> 
-				<tr> 
-					<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-				</tr> 
-				<tr> 
-					<td  class="hline"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-				</tr> 
-				<tr> 
-					<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-				</tr> 
-				<tr> 
-					<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-				</tr> 
-				<tr> 
-					<td   class="hline"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-				</tr> 
-				<tr> 
-					<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-				</tr> 
-				<tr> 
-					<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-				</tr> 				
-			</table>
-	</div>
-<script>
 $(function(){
-console.log('я подключен!');
+//console.log('я подключен!');
 
-/*baseMatrix - базовая матрица, из которой делаются все возможные комбинации игр
-baseGame  - это ответ, полностью заполненная матрица, которую юзер должен получить*/
+//baseMatrix - базовая матрица, из которой делаються все возможные комбинации игр
+//baseGame  - это ответ, полностью заполненная матрица, которую юзер должен получить
 var baseMatrix = makeBaseMatrix();
 var baseGame;
 /*game - это неполностью заполненная матрица, то что юзер видит в самом начале
@@ -371,8 +300,3 @@ for(var i=0; i<9; i++){
 alert('молодец, держи плюшку!');
 }
 });	
-</script>
-</body>
-</html> 
-<div>
-</div>

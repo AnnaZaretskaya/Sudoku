@@ -88,7 +88,7 @@ border: 0px;
 min-width: 250px;
 min-height: 250px;
 width: 500px;
-height: 500px;
+height: 512px;
 margin: 30px auto 0 auto;
 box-shadow: 0 0 50px 10px rgba(186,186,186,0.5);
 }
@@ -96,8 +96,7 @@ box-shadow: 0 0 50px 10px rgba(186,186,186,0.5);
 border:1px solid rgba(22, 56, 80, 1);
 width: 100%;
 height: 100%;
-cellpadding: 3px;
-
+padding: 3px;
 }
 .table td {
 text-align:center;
@@ -109,27 +108,26 @@ width: 54px;
 height: 53px;
 margin: 0px;
 padding: 0px;
-/*border-width:0px;
-box-sizing: border-box ;*/
 }
-
+/*вертикальные линии*/
 .vline:after {
 position: absolute;	
 content: "";
 top: 0px;
 left: -3px;
-height: 494px;
+height: 500px;
 width: 2px;
 background-color: rgba(22, 56, 80, 1);
 color: rgba(22, 56, 80, 1);
 }
+/*горизонтальные линии*/
 .hline:after {
 position: absolute;	
 content: "";
-top: -2px;
+top: -3px;
 left: 0px;
 height: 2px;
-width: 493px;
+width: 488px;
 background-color: rgba(22, 56, 80, 1);
 color: rgba(22, 56, 80, 1);
 }
