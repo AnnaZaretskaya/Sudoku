@@ -1,10 +1,18 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+	<link rel="shortcut icon" href="bulb.ico" type="image/x-icon">
     <meta charset="utf-8">
     <title>Sudoku</title>
 	<link rel="stylesheet" href="style.css" >
-	<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(window).resize(function(){
+				document.getElementById('width').innerHTML = $(window).width();
+			})
+		})
+	</script>
 	<!--[if lte IE 11]>
   <style type="text/css">
    .main {
@@ -18,7 +26,7 @@ width: 486px;
 }
   </style>
   <![endif]-->
-<![if IE]><style type="text/css">
+<![if IE]><style>
    .main {
     height: 522px;   
    }
@@ -28,12 +36,16 @@ height: 509px;
 .hline:after {
 width: 486px;
 }
+.popup form {
+width: 90px;
+}
   </style><![endif]>
 </head>
   <body>
+<div id="width"></div>
 <div class="popup">
 	<a class="close" >X</a>
-	<form method="post" action="">
+	<form method="post">
 		<button type="button" value="1">1</button>
 		<button type="button" value="2">2</button>
 		<button type="button" value="3">3</button><br>
@@ -48,19 +60,19 @@ width: 486px;
 		</div>
     <div class="header">
 	<div class="center">
-		<div class="top">
-			<div class="link"><a href="#" title="Hire me!">Анна Зарецкая</a></div>
-			<div class="btn"><button id="refresh">Новая игра
-							</button></div>
-			<div class="btn" title="Показывает Ваши ошибки"><button id="showTip" >Подсказка
-							</button></div>
-			<div class="btn"><button id="showAnswer">Показать ответ	
-							</button></div>
-			
+		 
+		<div class="link"><a href="https://www.linkedin.com/in/anna-zaretskaya-b69332160/" title="Hire me!">Анна Зарецкая</a></div>
+		<div class="btn">
+				<button id="refresh">Новая игра</button>
+				<button title="Показывает Ваши ошибки" id="showTip" >Подсказка</button>
+				<button id="showAnswer">Ответ</button>
 		</div>
+		
 	</div>
 	</div>
 	<div class="main" id="container">
+	<noscript><p>Ваш браузер не поддерживает скрипты!</p></noscript> 
+
 			<table class="table" id="table">
 				<tr> 
 					<td></td><td></td><td></td><td class="vline"></td><td></td><td></td><td class="vline"></td><td></td><td></td>
@@ -338,13 +350,21 @@ $(".table").click (function(event) {
 		return;
 	curRow = cell.parentNode.rowIndex;
 	curCol = cell.cellIndex;
+	//coordsX коррдината Х появления меню, перерасчет недопускает выпадания  за границы при маленьких экранах
+	var coordsX = function (){
+		if (($(window).width()<670)&&(event.pageX>($(window).width())-85)) {
+			console.log(event.pageX-90);
+			return event.pageX-80 ;
+		}
+		return event.pageX;
+	}
 	if (game[curRow][curCol]) {
 		//console.log('кликнули на мою серую ячейку по адресу ', curRow, curCol);
 	} else {
 		//console.log('кликнули на мою белую ячейку по адресу ', curRow, curCol);
 		//здесь надо показать юзеру циферки, чтоб дать нажать на них
 		$(".popup").fadeIn(100);
-		$('.popup').css({'top': event.pageY, 'left': event.pageX});
+		$('.popup').css({'top': event.pageY, 'left': coordsX});
 		}
 });	
 //обработчик нажатия на всплывающее меню
@@ -397,5 +417,3 @@ alert('молодец, держи плюшку!');
 </script>
 </body>
 </html> 
-<div>
-</div>
